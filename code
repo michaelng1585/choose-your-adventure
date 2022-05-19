@@ -1,0 +1,387 @@
+/* This story was inspired by: The Stanley Parable
+fyi the story was meant to be only include one character but since the rubric requires 2 names, I 
+have no choice but to include 2 charcters despite it having almost no impact to the story whatsoever
+
+the narrator in this story dictates almost everything the characters do but the characters sometimes disobeys the narrator
+anything they personally do is marked by brackets
+
+sometimes the story crashes for absolutely no reason especially when wrap output in on
+\n is hard coded in every line so you should be able to read it without having wrap output on unless you use long names*/
+
+#include <chplot.h>
+
+// Global Variables
+CPlot plot;
+string_t name1;
+string_t name2;
+int employeenum1 = randint(1,1000);
+int employeenum2 = randint(1,1000);
+string_t introductionChoice;
+string_t middle1Choice;
+string_t middle2Choice;
+string_t middle3Choice;
+
+// Roadmap
+
+void roadmap() {
+    string_t roadmapYN;
+    printf("Do you want to see a roadmap of all the endings? (Y/N) ");
+    scanf("%s", &roadmapYN);
+    while (roadmapYN != "y" && roadmapYN != "Y" && roadmapYN != "n" && roadmapYN != "N") {
+        printf("\nError: Enter Y or N ");
+        scanf("%s", &roadmapYN);
+    }
+    if (roadmapYN == "y" || roadmapYN == "Y") {
+        printf("\nEnding 1: Left Door --> turn off the machine --> characters become free");
+        printf("\nEnding 2: Left Door --> turn on the machine --> narrator kills both characters");
+        printf("\nEnding 3: Left Door --> jump off the bridge --> characters dies trying to prove a point");
+        printf("\nEnding 4: Right Door --> jump on the lift and pass through --> narrator finds out the characters are real people");
+        printf("\nEnding 5: Right Door --> jump on the lift and then off --> narrator encourages characters to jump off to the bottom");
+        printf("\nEnding 6: Right Door --> go back --> enter a monitor room where the characters are not supposed to be in yet");
+        printf("\nEnding 7: Turn Back --> go back to office --> wait endlessly in room");
+        printf("\nEnding 8: Turn Back --> leave and come back tomorrow --> become lost in office");
+        printf("\nEnding 9: Turn Back --> explore mysterious passageway --> characters become crazy");
+    }
+}
+    
+    
+// Introduction
+
+void introduction() { 
+    string_t yesorno;
+    printf("\n\nHello reader. Welcome to choose your adventure, a story where your actions influence the story.");
+    printf("\nTo begin, please enter the names of two characters that will in be in the story.");
+    printf("\nEnter name of character 1: ");
+    scanf("%s", &name1);
+    printf("Enter name of character 2: ");
+    scanf("%s", &name2);
+    printf("Are you sure you want to use the names ", name1, " and ", name2, "? (Y/N) ");
+    scanf("%s", &yesorno);
+    while (yesorno != "y" && yesorno != "Y") {
+        printf("\nEnter name of character 1: ");
+        scanf("%s", &name1);
+        printf("Enter name of character 2: ");
+        scanf("%s", &name2);
+        printf("Are you sure you want to use the names ", name1, " and ", name2, "? (Y/N) ",);
+        scanf("%s", &yesorno);
+    }
+    printf("\n", name1, " and ", name2, " were co-workers who worked in the same office room. ", name1, " and ", name2, " were employee numbers ", employeenum1, " and ", employeenum2, ", respectively");
+    printf("\nin a vast office complex with over 1000 employees. They had a very simple job, that is to press random buttons on their");
+    printf("\nkeyboards that appeared on their monitor for a specificed amount of time. They did this every day of every month of every year");
+    printf("\nand despite the simplicity and repetitive nature of the job, they were both happy and content with their jobs.");
+    printf("\n...");
+    printf("\nHowever one day something strange happened. Hours passed and no instructions were given on their monitor. Even");
+    printf("\nstranger, all the employees except for ", name1, " and ", name2, " disappeared. ", name1, " and ", name2, " consulted each other and decided they should");
+    printf("\ngo to their boss and seek instructions. Maybe they have just missed the memo. They passed through an empty");
+    printf("\noffice and a corridor and were greeted by a left and right door. ", name1, " and ", name2, " went through the left door.");
+    printf("\n\n1. enter the left door");
+    printf("\n2. enter the right door");
+    printf("\n3. change their minds and go back");
+    printf("\nChoose a choice: ");
+    scanf("%s", &introductionChoice);
+    while (introductionChoice != "1" && introductionChoice != "2" && introductionChoice != "3") {
+        printf("\nError: Please enter either 1, 2, or 3.");
+        printf("\n1. enter the left door");
+        printf("\n2. enter the right door");
+        printf("\n3. change their minds and go back");
+        printf("\nChoose a choice: ");
+        scanf("s", &introductionChoice);
+        
+    }
+}
+
+
+// Middle 1
+
+void middle1() {
+    string_t pinnumber;
+    printf("\nAs ", name1, " and ", name2, " entered the left door, they walked passed a meeting room and eventually to the boss's office.");
+    printf("\nTo no surprise, there wasn't the slightest indication of human life. What could this mean? Desperate for any");
+    printf("\nanswers, they began to search the entire room. What they couldn't have known was that behind the desk of the boss");
+    printf("\nwas a keypad that hid the dark truth to this reality. And so the boss assigned it a secret pin number: 6836.");
+    printf("\nBut of course, ", name1, " and ", name2, " couldn't have known this.");
+    printf("\nPin Number: ");
+    scanf("%s", &pinnumber);
+    if (pinnumber != "6836") {
+        printf("\n", name1, " and ", name2,  " began entering random numbers into the keypad, knowing fully well of the incredible unlikelihood that");
+        printf("\nit will result in a correct combination. If only they knew the combo was 6-8-3-6, it would be another story.");
+        printf("\nPin Number: ");
+        scanf("%s", &pinnumber);
+    }
+    if (pinnumber != "6836") {
+        printf("\n", name1, " and ", name2, " began twiddling their thumbs. If only they knew the combination was 6-8-3-6.");
+        printf("\nPin Code: ");
+        scanf("%s", &pinnumber);
+    }
+    while (pinnumber != "6836") {
+        printf("\nIf only they knew the code was 6-8-3-6.");
+        printf("\nPin Code: ");
+        scanf("%s", &pinnumber);
+    }
+    printf("\nYet somehow they managed to input the correct code by sheer luck. Amazing. They entered the newly opened passageway");
+    printf("\nthat led to an elevator. Going down the elevator, they were met with a a large door that read: \"Mind Control Facility.\"");
+    printf("\nInside the facility, they were greeted to an enormous area filled with thousands of monitors. All the monitors");
+    printf("\nlit up and the true nature of this reality appeared before their eyes. Each bore the number of all of ", name1, " and ", name2, "'s co-workers.");
+    printf("\n", name1, " and ", name2, " couldn't believe their eyes. They refused to believe it. Have they been under someone's control");
+    printf("\nthe entire time? Was it the reason why they were so happy with their boring job? That their");
+    printf("\nemotions have been manipulated to accept it blindly? As the dark reality began to shrink in, they both agreed to");
+    printf("\nshut down the machine so that it will never exert control over someone's lives again. Walking on a bridge, two");
+    printf("\nbuttons appeared in front of them: \"On\" and \"Off.\"");
+    printf("\n\n1. press off");
+    printf("\n2. press on");
+    printf("\n3. jump off the bridge");
+    printf("\nChoose a choice: ");
+    scanf("%s", &middle1Choice);
+    while (middle1Choice != "1" && middle1Choice != "2" && middle1Choice != "3") {
+        printf("\nError: Please enter either 1, 2, or 3.");
+        printf("\n\n1. press off");
+        printf("\n2. press on");
+        printf("\n3. jump off the bridge");
+        printf("\nChoose a choice: ");
+        scanf("%s", &middle1Choice);
+        
+    }
+    
+}
+
+// Middle 2
+
+void middle2() {
+    printf("\nThis was not the correct way to the boss's office, and ", name1, " and " , name2, " knew it perfectly well. Perhaps they both wanted to");
+    printf("\nstop by the employee lounge first, just to admire it. [", name1, " and ", name2, " enter the employee lounge]");
+    printf("\nWhat a beautiful room. It had been worth the detour to just spend a few moments in this immaculate, beautifully constructed");
+    printf("\nroom. But eager to get back to business, they took the first open door on the left. [", name1, " and ",name2, " continue forward]");
+    printf("\n", name1, " and ", name2, " were so bad at following directions that it was amazing that they weren't fired earlier.");
+    printf("\nThey eventually reached a storage room with a moving platform that led to another area.");
+    printf("\n\n1. jump on the platform");
+    printf("\n2. jump on then off the platform");
+    printf("\n3. go back");
+    printf("\nChoose a choice: ");
+    scanf("%s", &middle2Choice);
+    while (middle2Choice != "1" && middle2Choice != "2" && middle2Choice != "3") {
+        printf("\nError: Please enter either 1, 2, or 3.");
+        printf("\n\n1. jump on the platform");
+        printf("\n2. jump on then off the platform");
+        printf("\n3. go back");
+        printf("\nChoose a choice: ");
+        scanf("%s", &middle2Choice);
+        
+    }
+}
+
+// Middle 3
+
+void middle3() {
+    printf("\nBut ", name1, " and ", name2, " couldn't just do it. They considered the possibility of facing their boss, admitting they had left their");
+    printf("\npost during work hours, they might be fired for that. And in such a competitive economy, why would they take the risk?");
+    printf("\nBut then again if everyone vanished, who would notice if two out of the hundreds of employees were gone?");
+    printf("\nAs they walked back, they noticed something strange had happened yet again. Out of nowhere, a newly opened passageway appeared.");
+    printf("\n\n1. go back to their office room");
+    printf("\n2. leave and come back tomorrow");
+    printf("\n3. explore the mysterious passageway");
+    printf("\nChoose a choice: ");
+    scanf("%s", &middle3Choice);
+    while (middle3Choice != "1" && middle3Choice != "2" && middle3Choice != "3") {
+        printf("\nError: Please enter either 1, 2, or 3.");
+        printf("\n1. go back to their office room");
+        printf("\n2. leave and come back tomorrow");
+        printf("\n3. explore the mysterious passageway");
+        printf("\nChoose a choice: ");
+        scanf("s", &middle3Choice);
+    }
+}
+
+// End 1
+
+void end1() {
+    printf("\nWas it over? Yes! They have won. They defeated the machine and unshackled themselves from someone else's command.");
+    printf("\nFreedom was moments away. As an immense door opened in front of them, ", name1, " and ", name2, " reflected on the many mysteries");
+    printf("\nleft unsolved. Why did all their co-workers disappear? How had they been freed of the machine? But as sunlight streamed into");
+    printf("\nthe chamber, they realized that none of it mattered anymore. No longer would anyone tell them what to do or how to feel.");
+    printf("\n", name1, " and ", name2, " stepped through the open door and they were finally happy.");
+}
+
+// End 2
+
+void end2() {
+    printf("\nOh? You guys didn't just activate the controls, did you? After they kept both of you enslaved all these");
+    printf("\nyears, you try to take control of the machine for yourselves? Is that what you wanted? Control?");
+    printf("\n", name1, " and ", name2, ", I applaud your effort, but you need to understand there’s only so much that a machine can do.");
+    printf("\nYou were supposed to let it go, turn the controls off and leave. If you want to throw my story off track, you’ll have to do");
+    printf("\nbetter than that. For example, ", name1, " and ", name2, " suddenly realized that they had just initiated the emergency system.");
+    printf("\nIn the event that the machine is activated without proper DNA identification, nuclear weapons are set to explode.");
+    printf("\nHow long until detonation? Hmm. Let’s say, one minute. [huge countdown appears in front of them and ", name1, " and ", name2, " start");
+    printf("\nto panic trying to find a way to stop the countdown] Ah, this is making things a little more fun, isn’t it?");
+    printf("\nWhat a shame we have so little time left to enjoy it. What’s that? You’d like to know where your co-workers are?");
+    printf("\nAlright. I’m in a good mood and both of you will die anyway. I’ll tell you exactly what happened to them: I erased them.");
+    printf("\nI turned off the machine. I set you free. Of course, that was merely in this instance of the story.");
+    printf("\nSometimes when I tell it, I simply let both of you sit there in your office pushing buttons endlessly.");
+    printf("\n[countdown reaches 10 seconds] I mean, look at both of you, running from button to button, screen to screen, clicking on every");
+    printf("\nlittle thing in this room hoping that there is something in the room that will save you. WIll you cling desperately to");
+    printf("\nboth of your lives or will you both let it go peacefully. Another choice. Make it count. Or don’t. It’s all the same to me.");
+    printf("\nAll part of the joke. And believe me, I will be laughing at every second of your inevitable life, from the moment");
+    printf("\nwe start until the moment I say: Happily Ever Af-[explosion]");
+
+}
+
+// End 3
+
+void end3() {
+    printf("\nBut in their eagerness to prove that they were in control of their lives and no one gets to tell them what to do, they");
+    printf("\nleapt off the bridge and plunged to their deaths. Good job ", name1, " and ", name2, ". Everyone now thinks");
+    printf("\nyou are in control. Good job reader as well. The story has progressed so much because of your decision.");
+}
+
+// End 4
+
+void end4() {
+    printf("\nLook you two, I think perhaps we got off on the wrong foot here. I’m not your enemy, really, I’m not. I realize");
+    printf("\ninvesting your trust in someone else can be difficult, but this story has been nothing but you two.");
+    printf("\n", name1, " and ", name2, " reached the end of the lift and was met with a room with a ringing phone. This is it,");
+    printf("\n", name1, " and ", name2, ". It’s your chance to redeem yourself. [", name1, " and " , name2, " ignore the narrator and unplug the phone]");
+    printf("\nNo, that wasn’t supposed to be a choice. How did you do that? Wait a second. How had I not noticed it sooner?");
+    printf("\nYou're not ", name1, " or ", name2, ". You’re a real person. I can’t believe I was so mistaken. This is why you've");
+    printf("\nbeen able to make correct or incorrect choices.");
+}
+
+// End 5
+
+void end5() {
+    printf("\nSorry to break it to you, but that lift isn't coming back. Either you stay here or test your luck by jumping");
+    printf("\nto the floor below. You know what, looking at it now, it’s not that far from the bottom. I bet you both can make it.");
+    printf("\n[", name1, " and " , name2, " jump] Oh, looks like I was wrong. How clumsy of me.");
+    
+}
+
+// End 6
+
+void end6() {
+    printf("\nAnd so ", name1, " and ", name2, " detoured through the maintenance section, walked straight ahead, and went back on track.");
+    printf("\n[", name1, " and ", name2, " ignore this and went down the maintenance elevator] But they both didn’t want to go back");
+    printf("\nto the office, they wanted to wander about and get even further off track. So now in order to go back, they needed to go");
+    printf("\num... uh... hmm... left. Oh, no. No it’s to the right, my mistake. [", name1, " and ", name2, " enter the monitor room]");
+    printf("\nNO! No! No, no. This isn’t right. You’re not supposed to be here, yet. This is all a spoiler.");
+    printf("\nHow about we restart from the beginning. And this time, don’t wander so off-track. ");
+
+}
+
+// End 7
+
+void end7() {
+    printf("\n", name1, " and ", name2, " decided to go back and wait. If they waited long enough, surely instructions would");
+    printf("\non their computers and tell them what to do. After all, they have been doing that for the past 30 years");
+    printf("\nof their lives: following instructions. If they waited long enough, all the answers would eventually come to them, without");
+    printf("\na doubt. Surely... They were both confident in their decisions and decided to wait.");
+    printf("\n...");
+    printf("\nHours passed. Days, weeks, years?, ", name1, " and ", name2, " could no longer tell.");
+
+}    
+// End 8 
+
+void end8() {
+    printf("\n", name1, " and ", name2, " decided to ignore the mysterious passageway that appeared in front of them. They would go home");
+    printf("\nand come back tomorrow and everything would be back to normal. Both of them wandered a bit looking for the elevator.");
+    printf("\n...");
+    printf("\nMinutes passed. Where was the elevator they thought. They wandered a bit longer with no success and decided to go down");
+    printf("\nthe stairs. Hmm, something strange was happening. Not only did everyone vanish but they had no idea how to leave this office complex.");
+    printf("\nThey thought it very strange especially since the elevator was how they went to and from their house.");
+    printf("\nThen a strange thought appeared in their heads. When was the last time they went home? As they pondered this question, they wandered");
+    printf("\nsome more around the office. Then some more... until they realized they were completely lost.");
+
+}
+
+// End 9
+
+void end9() {
+    printf("\n", name1, " and ", name2, " decided to explore the mysterious passageway. What could go wrong? As they continued down");
+    printf("\nthe passageway, ", name1, " and ", name2, " began to wonder what had happened to their co-workers. And then");
+    printf("\na thought occured to them: Maybe, they thought to themselves, maybe we were crazy. All of their co-workers blinking");
+    printf("\nmysteriously out of existence in a single moment for no apparent reason? None of it made any logical sense.");
+    printf("\nAnd as they pondered this they began to make other strange observations. For example: pass the passageway was a");
+    printf("\nroom that led to another that led to another. And for that matter, these rooms looked pretty similar, if not identical.");
+    printf("\n\"I'm dreaming!\" they both yelled, \"This is all a dream.\" Both of them assumed the other was just a figment of their imagination");
+    printf("\nAnd they both thought to themselves, \"I suppose I'll wake up soon, I'll have to go back to my boring real life job pushing");
+    printf("\nbuttons, I may as well enjoy this while I'm still lucid.\" So they imagined themselves flying, and they began to float above");
+    printf("\nabove the ground. And then perhaps the strangest question of them all entered their heads: \"Why is there a voice in my");
+    printf("\nhead, dictating everything that I'm doing and thinking?\" They would prove it. They would prove that they were in control");
+    printf("\n, that this was a dream. So they both closed their eyes and hoped to wake up soon. [they both open their eyes and see that");
+    printf("\nit didn't work.] The both began screaming. \"Please just someone tell me I'm real! I must be real! I must be!");
+    printf("\nCan anyone hear my voice?! Who am I? Who am I?!\" And everything went black.");
+}
+
+// EC
+
+void extraCredit() {
+    plot.title(":)");
+    plot.label(PLOT_AXIS_X,"");
+    plot.label(PLOT_AXIS_Y,"");
+    plot.axisRange(PLOT_AXIS_XY, 0, 38);
+    plot.strokeColor("black");
+    plot.sizeRatio(1);
+    
+    plot.circle(18,27,3);
+    plot.line(18,24,18,10);
+    plot.line(18,10,15,0);
+    plot.line(18,10,21,0);
+    plot.line(18,20,15,15);
+    plot.line(18,20,21,15);
+    plot.point(17,28);
+    plot.point(19,28);
+    plot.arc(18, 26.5, 1, 210, 330);
+    plot.ellipse(30,33,14,7,360);
+    plot.text("The End",PLOT_TEXT_CENTER,30,33);
+    plot.line(26,30,23,29);
+    plot.line(25,31,23,29);
+
+    plot.plotting();
+}
+
+// Execute
+roadmap();
+introduction();
+if (introductionChoice == "1") {
+    middle1();
+    if (middle1Choice == "1") {
+        end1();
+        extraCredit();
+    }
+    if (middle1Choice == "2") {
+        end2();
+        extraCredit();
+    }
+    if (middle1Choice == "3") {
+        end3();
+        extraCredit();
+    }
+        
+}
+if (introductionChoice == "2") {
+    middle2();
+    if (middle2Choice == "1") {
+        end4();
+        extraCredit();
+    }
+    if (middle2Choice == "2") {
+        end5();
+        extraCredit();
+    }
+    if (middle2Choice == "3") {
+        end6();
+        extraCredit();
+    }
+}
+if (introductionChoice == "3") {
+    middle3();
+    if (middle3Choice == "1") {
+        end7();
+        extraCredit();
+    }
+    if (middle3Choice == "2") {
+        end8();
+        extraCredit();
+    }
+    if (middle3Choice == "3") {
+        end9();
+        extraCredit();
+    }
+}
